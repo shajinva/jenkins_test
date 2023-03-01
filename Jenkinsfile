@@ -35,7 +35,8 @@ pipeline {
 //
 //             echo "################ ${my_data[value1]}"
 //
-            echo "Global property file KEY_SAM: ${config.value}"
+            echo "Global property file KEY_SAM value: ${config.value}"
+            echo "Global property file KEY_SAM value1: ${config.value1}"
             }
       }
     }
