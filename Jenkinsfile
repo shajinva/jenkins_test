@@ -14,13 +14,11 @@ pipeline {
     }
     stage('secret') {
         environment {
-          SECRET_FILE_ID = credentials('secret-file-id')
-          username = credentials('username')
+          SECRET_FILE_ID = credentials('username')
         }
         steps {
             echo "####DISPLAYING SECRET_FILE_ID####"
             echo "Global property file: ${SECRET_FILE_ID}"
-            echo "Global property file: ${username}"
       }
     }
     stage('Example Deploy') {
