@@ -17,8 +17,9 @@ pipeline {
           SECRET_FILE_ID = credentials('KEY_SAM')
         }
         steps {
-            echo "####DISPLAYING SECRET_FILE_ID####"
-            echo "Global property file: ${SECRET_FILE_ID}"
+            echo "####DISPLAYING KEY_SAM####"
+            def mydata = readFile(SECRET_FILE_ID)
+            echo "Global property file KEY_SAM: ${mydata}"
       }
     }
     stage('Example Deploy') {
