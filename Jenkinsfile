@@ -21,9 +21,9 @@ pipeline {
             echo "####DISPLAYING KEY_SAM####"
             def my_data = readFile "${SECRET_FILE_ID}"
 
-            for (line in my_data) {
-            echo "################ ${line}"
-            }
+
+            echo "################ ${my_data.value1}"
+
 
 
             echo "Global property file KEY_SAM: ${my_data}"
