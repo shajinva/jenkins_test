@@ -1,4 +1,3 @@
-import json
 pipeline {
   agent any
 
