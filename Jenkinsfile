@@ -19,7 +19,7 @@ pipeline {
         }
         steps {
           script{
-            import json
+            import groovy.json.JsonSlurper
             echo "####DISPLAYING KEY_SAM####"
             def my_data = readFile "${SECRET_FILE_ID}"
             def res =  json.loads(my_data)
