@@ -1,3 +1,4 @@
+import groovy.json.JsonSlurper
 pipeline {
   agent any
 
@@ -19,13 +20,13 @@ pipeline {
         steps {
           script{
             echo "####DISPLAYING KEY_SAM####"
-            def props = readJSON file: "${SECRET_FILE_ID}"
+//             def props = readJSON file: "${SECRET_FILE_ID}"
 //             def my_data = readFile "${SECRET_FILE_ID}"
 //             def res =  json.loads(my_data)
 
 //             echo res.get("value1")
 
-            echo "################ ${props}"
+//             echo "################ ${props}"
 
 //             echo "Global property file KEY_SAM: ${my_data}"
             }
