@@ -20,8 +20,9 @@ pipeline {
           script{
             echo "####DISPLAYING KEY_SAM####"
             def my_data = readFile "${SECRET_FILE_ID}"
+            def res =  json.loads(my_data)
 
-              echo my_data.get("value1")
+            echo res.get("value1")
 
             echo "################ ${my_data[value1]}"
 
