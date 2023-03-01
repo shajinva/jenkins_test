@@ -20,15 +20,20 @@ pipeline {
         steps {
           script{
             echo "####DISPLAYING KEY_SAM####"
-//             def props = readJSON file: "${SECRET_FILE_ID}"
+
+            def jsonSlurper = new JsonSlurper()
+
+            def config = jsonSlurper.parse(new File('${SECRET_FILE_ID}'))
+
+
 //             def my_data = readFile "${SECRET_FILE_ID}"
 //             def res =  json.loads(my_data)
-
+//
 //             echo res.get("value1")
-
-//             echo "################ ${props}"
-
-//             echo "Global property file KEY_SAM: ${my_data}"
+//
+//             echo "################ ${my_data[value1]}"
+//
+            echo "Global property file KEY_SAM: ${config}"
             }
       }
     }
