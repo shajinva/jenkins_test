@@ -20,10 +20,11 @@ pipeline {
         steps {
           script{
             echo "####DISPLAYING KEY_SAM####"
+            def my_data = readFile "${SECRET_FILE_ID}"
 
             def jsonSlurper = new JsonSlurper()
 
-            def config = jsonSlurper.parse(new File('${SECRET_FILE_ID}'))
+            def config = jsonSlurper.parse(my_data)
 
 
 //             def my_data = readFile "${SECRET_FILE_ID}"
