@@ -14,7 +14,7 @@ pipeline {
     }
     stage('secret') {
         environment {
-          SECRET_FILE_ID = credentials('MY_TOKEN')
+          SECRET_FILE_ID = credentials('KEY_SAM')
         }
         steps {
             echo "####DISPLAYING SECRET_FILE_ID####"
