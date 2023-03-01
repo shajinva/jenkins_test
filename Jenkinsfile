@@ -23,12 +23,9 @@ pipeline {
             echo "####DISPLAYING KEY_SAM####"
             def my_data = readFile "${SECRET_FILE_ID}"
 
-             def data = new JsonSlurperClassic().parseText(my_data)
-             echo "color: ${data}"
+            def jsonSlurper = new JsonSlurper()
 
-//             def jsonSlurper = new JsonSlurper()
-//
-//             def config = jsonSlurper.parse(my_data)
+            def config = jsonSlurper.parseText(my_data)
 
 
 //             def my_data = readFile "${SECRET_FILE_ID}"
@@ -38,7 +35,7 @@ pipeline {
 //
 //             echo "################ ${my_data[value1]}"
 //
-//             echo "Global property file KEY_SAM: ${config}"
+            echo "Global property file KEY_SAM: ${config}"
             }
       }
     }
