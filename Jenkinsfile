@@ -18,7 +18,7 @@ pipeline {
         }
         steps {
             echo "####DISPLAYING KEY_SAM####"
-            def mydata = readFile(SECRET_FILE_ID)
+            def mydata = New readFile(SECRET_FILE_ID)
             echo "Global property file KEY_SAM: ${mydata}"
       }
     }
